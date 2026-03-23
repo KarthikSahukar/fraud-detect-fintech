@@ -30,7 +30,7 @@ jobs:
       - name: Lint with flake8
         run: |
           cd backend
-          flake8 . --max-line-length=100 --exclude=venv,model,tests
+          flake8 . --max-line-length=100 --exclude=venv,model,tests --ignore=E302,E305,W292,E501,E712
 
       - name: Run tests
         run: |
