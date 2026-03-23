@@ -1,0 +1,18 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pkl
+*.db
+.env
+
+# Dataset - too large for GitHub
+backend/model/creditcard.csv
+
+# React
+frontend/node_modules/
+frontend/build/
+
+# OS
+.DS_Store
+Thumbs.db
