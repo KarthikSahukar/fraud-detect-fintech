@@ -1,0 +1,100 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f1117;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.app { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ── Header ── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #1a1d27;
+  border-bottom: 1px solid #2d3748;
+}
+.header-left h1 { font-size: 22px; color: #63b3ed; font-weight: 700; }
+.subtitle { font-size: 12px; color: #718096; margin-left: 10px; }
+.stat-pills { display: flex; gap: 10px; }
+.pill { padding: 5px 14px; border-radius: 99px; font-size: 13px; font-weight: 600; }
+.pill.total { background: #2d3748; color: #e2e8f0; }
+.pill.fraud { background: #742a2a; color: #fc8181; }
+.pill.rate  { background: #1a365d; color: #63b3ed; }
+
+/* ── Main ── */
+.main { padding: 24px 32px; flex: 1; }
+.top-row { margin-bottom: 20px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+.card {
+  background: #1a1d27;
+  border: 1px solid #2d3748;
+  border-radius: 12px;
+  padding: 20px;
+}
+.card.wide { grid-column: 1 / 2; }
+.card h2 { font-size: 15px; font-weight: 600; margin-bottom: 14px; color: #a0aec0; }
+
+/* ── Simulate Button ── */
+.simulate-btn {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.simulate-btn:hover { background: #2b6cb0; }
+.simulate-btn:disabled { background: #2d3748; color: #718096; cursor: not-allowed; }
+.simulate-note { font-size: 12px; color: #718096; margin-left: 12px; }
+
+/* ── Transaction Feed ── */
+.tx-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tx-table th {
+  text-align: left; padding: 8px 12px;
+  color: #718096; font-weight: 500;
+  border-bottom: 1px solid #2d3748;
+}
+.tx-table td { padding: 10px 12px; border-bottom: 1px solid #1e2433; }
+.tx-table tr:last-child td { border-bottom: none; }
+.tx-table tr.fraud-row { background: #1a0a0a; }
+.badge {
+  padding: 2px 10px; border-radius: 99px;
+  font-size: 11px; font-weight: 600;
+}
+.badge.fraud { background: #742a2a; color: #fc8181; }
+.badge.legit { background: #1c4532; color: #68d391; }
+.score { font-size: 12px; color: #718096; }
+.score.high { color: #fc8181; font-weight: 600; }
+.empty { color: #4a5568; font-size: 13px; text-align: center; padding: 20px; }
+
+/* ── Fraud Alerts ── */
+.alert-list { display: flex; flex-direction: column; gap: 10px; max-height: 320px; overflow-y: auto; }
+.alert-card {
+  background: #1a0a0a;
+  border: 1px solid #742a2a;
+  border-radius: 8px;
+  padding: 12px;
+}
+.alert-amount { font-size: 16px; font-weight: 700; color: #fc8181; }
+.alert-meta { font-size: 12px; color: #a0aec0; margin-top: 4px; }
+.alert-score { font-size: 11px; color: #718096; margin-top: 4px; }
+
+/* ── Chart ── */
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.stat-box { background: #0f1117; border-radius: 8px; padding: 12px; text-align: center; }
+.stat-box .val { font-size: 22px; font-weight: 700; color: #63b3ed; }
+.stat-box .lbl { font-size: 11px; color: #718096; margin-top: 2px; }
